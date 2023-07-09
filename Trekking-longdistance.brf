@@ -202,6 +202,13 @@ assign supposed_speed
 
 # add estimate tags
 assign traffic_penalty
+   switch and consider_traffic greater supposed_speed 50
+      switch estimated_traffic_class=       0
+      switch estimated_traffic_class=1|2    0
+      switch estimated_traffic_class=3      0.2
+      switch estimated_traffic_class=4      0.4
+      switch estimated_traffic_class=5      0.6
+      switch estimated_traffic_class=6|7    0.8 99
    switch and consider_traffic greater supposed_speed 30
       switch estimated_traffic_class=       0
       switch estimated_traffic_class=1|2    0
